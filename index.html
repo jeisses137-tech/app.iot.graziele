@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Casa IoT</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f4f8;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 5px;
+        }
+
+        .subtitulo {
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+        }
+
+        .dispositivo {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 15px;
+            box-shadow: 0 3px 10px #0002;
+        }
+
+        .dispositivo h2 {
+            margin-top: 0;
+        }
+
+        button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+        }
+
+        .ligar {
+            background: #22c55e;
+            color: white;
+        }
+
+        .desligar {
+            background: #ef4444;
+            color: white;
+        }
+
+        .status {
+            font-weight: bold;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🏠 Minha Casa IoT</h1>
+        <p class="subtitulo">Controle sua casa pelo celular</p>
+
+        <div class="dispositivo">
+            <h2>💡 Lâmpada</h2>
+            <p class="status" id="lampada">Desligada</p>
+
+            <button class="ligar" onclick="ligar('lampada')">
+                Ligar
+            </button>
+
+            <button class="desligar" onclick="desligar('lampada')">
+                Desligar
+            </button>
+        </div>
+
+        <div class="dispositivo">
+            <h2>🔌 Tomada</h2>
+            <p class="status" id="tomada">Desligada</p>
+
+            <button class="ligar" onclick="ligar('tomada')">
+                Ligar
+            </button>
+
+            <button class="desligar" onclick="desligar('tomada')">
+                Desligar
+            </button>
+        </div>
+
+        <div class="dispositivo">
+            <h2>🌀 Ventilador</h2>
+            <p class="status" id="ventilador">Desligado</p>
+
+            <button class="ligar" onclick="ligar('ventilador')">
+                Ligar
+            </button>
+
+            <button class="desligar" onclick="desligar('ventilador')">
+                Desligar
+            </button>
+        </div>
+
+    </div>
+
+    <script>
+        function ligar(dispositivo) {
+            document.getElementById(dispositivo).textContent = "Ligado";
+        }
+
+        function desligar(dispositivo) {
+            document.getElementById(dispositivo).textContent = "Desligado";
+        }
+    </script>
+
+</body>
+</html>
